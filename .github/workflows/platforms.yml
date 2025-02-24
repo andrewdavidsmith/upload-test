@@ -13,4 +13,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Platforms
       run: |
+        pip install packaging
         python -c "import packaging.tags; next(packaging.tags.platform_tags())"
