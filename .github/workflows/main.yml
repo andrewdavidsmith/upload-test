@@ -14,9 +14,9 @@ jobs:
         brew install ncurses
     - name: Configure
       run: |
-        brew --prefix
-        ls -lR /usr/local/opt/ncurses
-        ls -lR /usr/local/Cellar/ncurses/6.5
+        # brew --prefix
+        # ls -lR /usr/local/opt/ncurses
+        # ls -lR /usr/local/Cellar/ncurses/6.5
         # find /usr/local/opt -name \*ncurses\*
-        # cc main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include
-        # a.out
+        cc main.c /usr/local/Cellar/ncurses/6.5/lib/libncurses.a -I/usr/local/Cellar/ncurses/6.5/include
+        a.out
