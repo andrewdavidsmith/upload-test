@@ -20,5 +20,5 @@ jobs:
         sudo find /opt -name libncurses.a
         sudo find /usr -name ncurses.h
         sudo find /opt -name ncurses.h
-        cc main.c -I$(brew --prefix)/include -L$(brew --prefix)/lib
+        cc main.c -I/opt/homebrew/Cellar/ncurses/6.5/include -I$(brew --prefix)/include -L/opt/homebrew/Cellar/ncurses/6.5/lib -L$(brew --prefix)/lib
         a.out
