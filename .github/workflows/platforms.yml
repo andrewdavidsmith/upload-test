@@ -14,4 +14,4 @@ jobs:
     - name: Platforms
       run: |
         pip install packaging
-        python -c "import packaging.tags; next(packaging.tags.platform_tags())"
+        python -c "import packaging.tags; print(next(packaging.tags.platform_tags()))"
