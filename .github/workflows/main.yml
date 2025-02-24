@@ -13,10 +13,9 @@ jobs:
     - name: Install dependencies
       run: |
         brew install ncurses
-        brew link ncurses
     - name: Configure
       run: |
         brew --prefix
-        find /usr/local/opt/ncurses
+        find /usr/local/opt -name \*ncurses\*
         gcc-14 main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include
         a.out
