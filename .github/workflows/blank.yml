@@ -18,9 +18,12 @@ jobs:
           name: a-dot-out
           path: a.out
   env-test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-13, macos-14, macos-15]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
