@@ -1,0 +1,13 @@
+name: Platforms
+
+on:
+  workflow_dispatch:
+
+jobs:
+  macos-platforms:
+    runs-on: [macos-13,macos-14,macos-15]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Platforms
+      run: |
+        python -c "import packaging.tags; next(packaging.tags.platform_tags())"
