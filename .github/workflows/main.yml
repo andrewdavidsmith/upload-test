@@ -17,5 +17,5 @@ jobs:
       run: |
         brew --prefix
         find /usr/local/opt -name \*ncurses\*
-        gcc-14 main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include
+        cc main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include
         a.out
