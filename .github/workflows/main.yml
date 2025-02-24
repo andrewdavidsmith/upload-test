@@ -9,13 +9,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Update Homebrew
-      run: brew update
-    - name: Install dependencies
       run: |
+        brew update
         brew install ncurses
     - name: Configure
       run: |
         brew --prefix
-        find /usr/local/opt -name \*ncurses\*
-        cc main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include
-        a.out
+        ls -lR /usr/local/opt/ncurses
+        # find /usr/local/opt -name \*ncurses\*
+        # cc main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include
+        # a.out
