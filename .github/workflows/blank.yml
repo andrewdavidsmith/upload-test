@@ -32,6 +32,12 @@ jobs:
       - name: Show GitHub ref
         run: echo "$GITHUB_REF"
         if: runner.os != 'Windows'
+      - name: arch
+        run: |
+          echo ${{ runner.arch }}
+          echo ${{ matrix.os }}
+          uname -s
+          uname -p
       - name: Dump event JSON
         env:
           EVENT_JSON_FILENAME: ${{ github.event_path }}
