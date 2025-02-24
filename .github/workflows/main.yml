@@ -13,12 +13,11 @@ jobs:
     - name: Install dependencies
       run: |
         brew install ncurses
+        brew link ncurses
     - name: Configure
       run: |
         brew --prefix
         sudo find /usr -name libncurses.a
-        sudo find /opt -name libncurses.a
         sudo find /usr -name ncurses.h
-        sudo find /opt -name ncurses.h
-        gcc-14 main.c -I/usr/local/Cellar/ncurses/6.5/include -L/usr/local/Cellar/ncurses/6.5/lib
+        gcc-14 main.c -I/usr/local/Cellar/ncurses/6.5/include -I$(brew --prefix)/include -L/usr/local/Cellar/ncurses/6.5/lib -L$(brew --prefix)/lib
         a.out
