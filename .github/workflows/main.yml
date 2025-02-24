@@ -18,5 +18,4 @@ jobs:
         # ls -lR /usr/local/opt/ncurses
         # ls -lR /usr/local/Cellar/ncurses/6.5
         # find /usr/local/opt -name \*ncurses\*
-        cc main.c /usr/local/Cellar/ncurses/6.5/lib/libncurses.a -I/usr/local/Cellar/ncurses/6.5/include
-        ./a.out
+        gcc-14 main.c /usr/local/Cellar/ncurses/6.5/lib/libncurses.a -I/usr/local/Cellar/ncurses/6.5/include
