@@ -17,6 +17,5 @@ jobs:
     - name: Configure
       run: |
         brew --prefix
-        sudo find /usr/local
         gcc-14 main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include -static
         a.out
