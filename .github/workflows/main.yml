@@ -15,5 +15,7 @@ jobs:
         brew install ncurses
     - name: Configure
       run: |
+        brew --prefix
+        find /usr -name libncurses.a
         cc main.c -I$(brew --prefix)/include -L$(brew --prefix)/lib
         a.out
