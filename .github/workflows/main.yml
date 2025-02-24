@@ -1,0 +1,19 @@
+name: Test ncurses on macOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  macos-test:
+    runs-on: macos-15
+    steps:
+    - uses: actions/checkout@v4
+    - name: Update Homebrew
+      run: brew update
+    - name: Install dependencies
+      run: |
+        brew install ncurses
+    - name: Configure
+      run: |
+        cc main.c -I$(brew --prefix)/include -L$(brew --prefix)/lib
+        a.out
