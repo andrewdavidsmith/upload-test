@@ -16,6 +16,9 @@ jobs:
     - name: Configure
       run: |
         brew --prefix
-        find /usr -name libncurses.a
+        sudo find /usr -name libncurses.a
+        sudo find /opt -name libncurses.a
+        sudo find /usr -name ncurses.h
+        sudo find /opt -name ncurses.h
         cc main.c -I$(brew --prefix)/include -L$(brew --prefix)/lib
         a.out
