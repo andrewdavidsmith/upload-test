@@ -18,5 +18,5 @@ jobs:
       run: |
         brew --prefix
         sudo find /usr/local
-        gcc-14 main.c -I/usr/local/Cellar/ncurses/6.5/include -I$(brew --prefix)/include -L/usr/local/Cellar/ncurses/6.5/lib -L$(brew --prefix)/lib -static
+        gcc-14 main.c -L/usr/local/opt/ncurses/lib -I/usr/local/opt/ncurses/include -static
         a.out
