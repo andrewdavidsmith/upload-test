@@ -18,6 +18,8 @@ jobs:
         # ls -lR /usr/local/opt/ncurses
         # ls -lR /usr/local/Cellar/ncurses/6.5
         # find /usr/local/opt -name \*ncurses\*
+        NCURSES_DIR=$(brew --prefix ncurses)
+        echo ${NCURSES_DIR}
         export NCURSES_LIB_DIR=/usr/local/opt/ncurses/lib
         export NCURSES_INCLUDE_DIR=/usr/local/opt/ncurses/include
         gcc-14 main.c ${NCURSES_LIB_DIR}/libncurses.a -I${NCURSES_INCLUDE_DIR}
