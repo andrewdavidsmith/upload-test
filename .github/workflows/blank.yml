@@ -1,0 +1,19 @@
+name: Testing upload-artifacts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: build the binary
+        run: |
+          cc main.c
+      - name: Upload the a.out
+        uses: actions/upload-artifact@v4
+        with:
+          name: a-dot-out
+          path: a.out
