@@ -1,0 +1,17 @@
+name: Testing download-artifacts
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: a-dot-out
+        # repository: andrewdavidsmith/upload-test
+        # run-id: 1234
+        run: |
+          ls -lR
+          ./a.out
