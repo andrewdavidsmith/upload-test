@@ -13,6 +13,7 @@ jobs:
         name: a-dot-out
         # repository: andrewdavidsmith/upload-test
         # run-id: 1234
+    - name: Do something
       run: |
         ls -lR
         ./a.out
