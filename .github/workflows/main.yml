@@ -7,6 +7,9 @@ jobs:
   download-test:
     runs-on: ubuntu-latest
     steps:
+    - name: echo
+      run: |
+        echo "$GITHUB_CONTEXT"
     - name: Download?
       uses: actions/download-artifact@v4
       with:
