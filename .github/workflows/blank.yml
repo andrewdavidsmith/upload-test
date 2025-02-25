@@ -17,30 +17,3 @@ jobs:
         with:
           name: a-dot-out
           path: a.out
-  env-test:
-    strategy:
-      matrix:
-        os: [macos-13, macos-14, macos-15]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v4
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-        if: runner.os != 'Windows'
-      - name: Show GitHub ref
-        run: echo "$GITHUB_REF"
-        if: runner.os != 'Windows'
-      - name: arch
-        run: |
-          echo ${{ runner.arch }}
-          echo ${{ matrix.os }}
-          uname -s
-          uname -p
-      - name: Dump event JSON
-        env:
-          EVENT_JSON_FILENAME: ${{ github.event_path }}
-        run: cat "$EVENT_JSON_FILENAME"
-        if: runner.os != 'Windows'
-
