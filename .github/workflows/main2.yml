@@ -16,5 +16,3 @@ jobs:
     - name: Do something
       run: |
         echo ${{ steps.get-run-id.outputs.asdf }}
-        ls -lR
-        ./a.out
