@@ -1,4 +1,4 @@
-name: Testing download-artifacts
+name: Testing download-artifacts 2
 
 on:
   workflow_dispatch:
