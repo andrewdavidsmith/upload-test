@@ -15,6 +15,8 @@ jobs:
           RUN_ID=`gh run --repo ${OTHER_REPO} list --workflow "${WF_NAME}" --json databaseId --jq .[0].databaseId`
           echo "Detected latest run id of ${RUN_ID} for workflow ${WF_NAME}"
           echo "run-id=${RUN_ID}" >> "$GITHUB_OUTPUT"
+          echo >> "$GITHUB_OUTPUT"
+          echo "asdf=1234" >> "$GITHUB_OUTPUT"
       env:
         GH_TOKEN: ${{ github.token }}
     - name: Download?
@@ -25,5 +27,6 @@ jobs:
         run-id: ${{ steps.get-run-id.outputs.run-id }}
     - name: Do something
       run: |
+        echo ${{ steps.get-run-id.outputs.asdf }}
         ls -lR
         ./a.out
