@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     container: andrewdavidsmith/transferase-build
     steps:
-      - name: Start the container
+      - name: Checkout
         uses: actions/checkout@v4
+      - name: Start the container
         run: |
           docker pull $CONTAINER
           docker run --name build-container \
