@@ -6,6 +6,7 @@ on:
 jobs:
   download-test:
     runs-on: ubuntu-latest
+    container: andrewdavidsmith/transferase-build
     steps:
     - name: Get run ID of "Testing upload-artifacts" workflow
       id: get-run-id
