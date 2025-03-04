@@ -28,6 +28,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Check the dir
+        run: |
+          echo ${{ github.workspace }}
+          ls -lR
       - name: Upload the a.out
         uses: actions/upload-artifact@v4
         with:
