@@ -2,11 +2,12 @@ name: Testing upload-artifacts 2
 
 on:
   workflow_dispatch:
+env:
+  CONTAINER: andrewdavidsmith/transferase-build
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: andrewdavidsmith/transferase-build
     steps:
       - name: Checkout
         uses: actions/checkout@v4
