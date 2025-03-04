@@ -6,6 +6,7 @@ on:
 jobs:
   upload-test:
     runs-on: ubuntu-latest
+    container: andrewdavidsmith/transferase-build
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
