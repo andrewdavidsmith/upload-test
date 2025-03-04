@@ -21,9 +21,11 @@ jobs:
           SCRIPT: |
             cd /workspace
             gcc main.c
+            ls -lR
         run: |
           docker exec build-container bash -c "$SCRIPT"
   upload:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Upload the a.out
